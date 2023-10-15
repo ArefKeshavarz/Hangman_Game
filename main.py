@@ -1,65 +1,12 @@
 import random
 
-print("Hello user , welcome to Hangman game :) ")
-# step 0 : words and pictures :
-words = ('ant badger bat bear camel cat clam cobra cougar '
-         'crow dog donkey duck fox frog goat '
-         'hawk lion lizard mole monkey mouse mule newt '
-         'owl pigeon python ram rat raven '
-         'rhino salmon seal shark skunk sloth snake spider '
-         'stork swan tiger toad trout turkey whale wolf '
-         'wombat zebra ').split()
+import Shapes
+import Words
 
-HANGMANPICS = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
+print("Hello user , welcome to Hangman game :) ")
+words = Words.words
+HANGMANPICS = Shapes.HANGMANPICS
+
 number_of_wrong_answer = 0
 
 # step 1 : choise a word :
@@ -108,4 +55,4 @@ while number_of_wrong_answer <= 6:
     places, number_of_wrong_answer = check_letter(letter, word, places, number_of_wrong_answer)
     print(f"{places}")
 
-#-------------------------  finish  -------------------------
+# -------------------------  finish  -------------------------
